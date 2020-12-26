@@ -6,16 +6,6 @@ use Livewire\Component;
 
 class Demo extends Component
 {
-    public function fire()
-    {
-        $this->alert('success', 'Testing');
-        $this->alert('success', 'Testing');
-        $this->alert('success', 'Testing');
-        $this->alert('success', 'Testing');
-        $this->alert('success', 'Testing');
-        $this->alert('success', 'Testing');
-    }
-
     public function getBadgesProperty()
     {
         return [

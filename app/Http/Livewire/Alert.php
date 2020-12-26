@@ -13,7 +13,7 @@ class Alert extends Component
         'position'  =>  'top-end',
         'timer'  =>  3000,
         'toast'  =>  true,
-        'text' => null,
+        'text' => '',
         'showCancelButton'  =>  true,
         'showConfirmButton'  =>  false
     ];
@@ -25,7 +25,7 @@ class Alert extends Component
             'success',
             'info',
             'warning',
-            'danger'
+            'error'
         ];
     }
 
@@ -46,8 +46,6 @@ class Alert extends Component
 
     public function showAlert()
     {
-        $this->config['text'] = $this->text;
-
         if (!$this->flash) {
             $this->alert(
                 $this->status,

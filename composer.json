@@ -10,11 +10,12 @@
     "require": {
         "php": "^7.3|^8.0",
         "blade-ui-kit/blade-ui-kit": "^0.2.0",
+        "calebporzio/sushi": "^2.1",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "jantinnerezo/erezo-ui": "9999999-dev",
-        "jantinnerezo/livewire-alert": "^2.0",
+        "jantinnerezo/livewire-alert": "dev-experimental",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "league/commonmark": "^1.4",
@@ -48,6 +49,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:jantinnerezo/erezo-ui.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:jantinnerezo/livewire-alert.git"
         }
     ],
     "autoload-dev": {
