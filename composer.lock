@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2cb129890fe0a4e2291e98f6c220bc2f",
+    "content-hash": "4cd9f1bbb9ca967512edcae722fa4d50",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1047,16 +1047,16 @@
         },
         {
             "name": "jantinnerezo/livewire-alert",
-            "version": "dev-experimental",
+            "version": "2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jantinnerezo/livewire-alert.git",
-                "reference": "d33f07db452bf562fea03c053aacfda305786f6c"
+                "reference": "8cdf191c86be78c438c4f78e18d99c40c7a0d481"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jantinnerezo/livewire-alert/zipball/d33f07db452bf562fea03c053aacfda305786f6c",
-                "reference": "d33f07db452bf562fea03c053aacfda305786f6c",
+                "url": "https://api.github.com/repos/jantinnerezo/livewire-alert/zipball/8cdf191c86be78c438c4f78e18d99c40c7a0d481",
+                "reference": "8cdf191c86be78c438c4f78e18d99c40c7a0d481",
                 "shasum": ""
             },
             "require": {
@@ -1080,14 +1080,7 @@
                     "Jantinnerezo\\LivewireAlert\\": "src"
                 }
             },
-            "scripts": {
-                "test": [
-                    "vendor/bin/phpunit"
-                ],
-                "test-coverage": [
-                    "vendor/bin/phpunit --coverage-html coverage"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1105,16 +1098,16 @@
                 "livewire-alert"
             ],
             "support": {
-                "source": "https://github.com/jantinnerezo/livewire-alert/tree/experimental",
-                "issues": "https://github.com/jantinnerezo/livewire-alert/issues"
+                "issues": "https://github.com/jantinnerezo/livewire-alert/issues",
+                "source": "https://github.com/jantinnerezo/livewire-alert/tree/2.1"
             },
             "funding": [
                 {
-                    "type": "custom",
-                    "url": "https://www.paypal.com/paypalme/jantinn"
+                    "url": "https://www.paypal.com/paypalme/jantinn",
+                    "type": "custom"
                 }
             ],
-            "time": "2020-12-26T12:09:37+00:00"
+            "time": "2020-12-26T18:32:20+00:00"
         },
         {
             "name": "laravel/framework",
@@ -7578,8 +7571,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "jantinnerezo/erezo-ui": 20,
-        "jantinnerezo/livewire-alert": 20
+        "jantinnerezo/erezo-ui": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
