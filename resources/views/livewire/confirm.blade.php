@@ -54,6 +54,7 @@
         <span class="text-amber-400">'toast'</span> => <span>false</span>,
         <span class="text-amber-400">'position'</span> => <span class="text-amber-400">'center'</span>,
         <span class="text-amber-400">'showConfirmButton'</span> => <span>true</span>,
+        <span class="text-amber-400">'cancelButtonText'</span> => <span class="text-amber-400">Nope</span>,
         <span class="text-amber-400">'onConfirmed'</span> => <span class="text-amber-400">'confirmed'</span>,
         <span class="text-amber-400">'onCancelled'</span> => <span class="text-amber-400">'cancelled'</span>
     ];

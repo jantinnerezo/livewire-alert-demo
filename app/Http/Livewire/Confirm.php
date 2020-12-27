@@ -17,6 +17,7 @@ class Confirm extends Component
             'toast' => false,
             'position' => 'center',
             'showConfirmButton' => true,
+            'cancelButtonText' => 'Nope',
             'onConfirmed' => 'confirmed',
             'onCancelled' => 'cancelled'
         ]);
