@@ -13,4 +13,6 @@
     <span class="text-cool-gray-400">...</span>
     <span class="text-light-blue-500"><</span><span class="text-light-blue-500">x-livewire-alert::scripts /></span>
 <span class="text-cool-gray-400"> {{ '</body>' }} </span></code></pre>
+    <h2 class="my-0"> Publish Config File </h2>
+    <pre class="scrollbar-none mt-4 language-html"><code class="scrolling-touch  language-html"><span class="text-emerald-400">php</span> <span class="text-cool-gray-400">artisan vendor:publish --provider=</span><span class="text-amber-400">"Jantinnerezo\LivewireAlert\LivewireAlertServiceProvider"</span><span class="text-cool-gray-400"> --tag=</span><span class="text-amber-400">"config"</span></code></pre>
 </div>
