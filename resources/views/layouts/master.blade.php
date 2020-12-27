@@ -46,14 +46,16 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XG8N1CZ7TS"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQR4W43B8V"></script>
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        gtag('config', 'G-XG8N1CZ7TS');
+            gtag('config', 'G-PQR4W43B8V');
         </script>
+
+
 
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
