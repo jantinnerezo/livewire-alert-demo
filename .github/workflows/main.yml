@@ -27,7 +27,7 @@ jobs:
         run: npm run prod
 
       - name: Execute tests
-        run: php artisan test
+        run: php artisan test --testsuite=Feature --stop-on-failure
 
       - name: Deploy
         run: curl ${{ secrets.FORGE_DEPLOYMENT_WEBHOOK }}
