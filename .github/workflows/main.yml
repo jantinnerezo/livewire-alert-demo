@@ -27,7 +27,7 @@ jobs:
         run: npm run prod
 
       - name: Execute tests
-        run: vendor/bin/phpunit --verbose
+        run: php artisan test
 
       - name: Deploy
         run: curl ${{ secrets.FORGE_DEPLOYMENT_WEBHOOK }}
