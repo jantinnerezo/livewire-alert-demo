@@ -25,6 +25,11 @@ jobs:
 
       - name: Compile assets
         run: npm run prod
+        
+      - name: Prepare Laravel Application
+        run: |
+          cp .env.example .env
+          php artisan key:generate
 
       - name: Execute tests
         run: php artisan test --testsuite=Feature --stop-on-failure
