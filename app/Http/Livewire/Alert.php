@@ -14,6 +14,8 @@ class Alert extends Component
         'timer'  =>  3000,
         'toast'  =>  true,
         'text' => '',
+        'confirmButtonText' => 'Ok',
+        'cancelButtonText' => 'Cancel',
         'showCancelButton'  =>  true,
         'showConfirmButton'  =>  false
     ];
