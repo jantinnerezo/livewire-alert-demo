@@ -23,6 +23,12 @@
             <input type="text" wire:model="config.text" placeholder="Enter Sub-text" class="rounded-md border-cool-gray-200 shadow-sm w-full">
         </div>
         <div>
+            <input type="text" wire:model="config.confirmButtonText" placeholder="Set confirm / ok button text" class="rounded-md border-cool-gray-200 shadow-sm w-full">
+        </div>
+        <div>
+            <input type="text" wire:model="config.cancelButtonText" placeholder="Set cancel / no button text" class="rounded-md border-cool-gray-200 shadow-sm w-full">
+        </div>
+        <div>
             <select wire:model="config.position" class="rounded-md border-cool-gray-200 shadow-sm w-full">
                 @foreach ($positions as $position)
                     <option value="{{ $position }}"> {{ $position}} </option>
