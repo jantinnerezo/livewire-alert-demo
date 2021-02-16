@@ -57,7 +57,7 @@
         <span class="text-amber-400">'cancelButtonText'</span> => <span class="text-amber-400">Nope</span>,
         <span class="text-amber-400">'onConfirmed'</span> => <span class="text-amber-400">'confirmed'</span>,
         <span class="text-amber-400">'onCancelled'</span> => <span class="text-amber-400">'cancelled'</span>
-    ];
+    ]);
 }
 </code></pre>
         </div>
