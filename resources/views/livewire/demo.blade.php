@@ -14,7 +14,6 @@
         <x-section-border />
         <livewire:confirm />
         <x-section-border />
-        <x-end />
     </article>
     <x-footer />
 </div>
