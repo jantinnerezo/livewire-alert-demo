@@ -1,11 +1,12 @@
 @props(['badges'])
+
 <div>
     <div class="block md:flex items-center justify-between mb-8">
         <div>
-            <h1 class="mt-0 mb-4"> Livewire Alert </h1>
+            <h1 class="mt-0 mb-4"> {{ config('app.name') }} </h1>
             <div class="flex items-center space-x-2">
                 @foreach ($badges as $badge)
-                    <p class="my-0">
+                    <p class="!my-0">
                         <a href="{{ $badge['href'] }}">
                             <img
                                 src="{{ $badge['src'] }}"
@@ -30,12 +31,5 @@
                 <p class="text-sm my-0 text-cool-gray-500"> Full Stack Web Developer </p>
             </div>
         </a>
-    </div>
-    <div>
-        <img
-            src="https://repository-images.githubusercontent.com/272130835/4db85f80-4524-11eb-9a4c-b52cece2cf4b"
-            alt="Jantinn Erezo"
-            class="m-0 w-full"
-        >
     </div>
 </div>
