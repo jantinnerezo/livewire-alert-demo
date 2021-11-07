@@ -1,15 +1,33 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+  mode: 'jit',
   important: true,
   purge: [
      './resources/**/*.blade.php',
      './resources/**/*.js',
      './resources/**/*.vue',
+     './vendor/jantinnerezo/livewire-alert/resources/**/*.blade.php',
+     './vendor/jantinnerezo/livewire-alert/src/LivewireAlert.php'
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            'code::before': {
+              content: ''
+            },
+            'code::after': {
+              content: ''
+            },
+            'a': {
+              textDecoration: 'none'
+            }
+          }
+        }
+      },
       container: {
         padding: '2rem',
       },
@@ -34,7 +52,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/forms')
   ],
 }
