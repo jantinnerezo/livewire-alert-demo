@@ -1,6 +1,6 @@
 <div>
     <div wire:loading.class="opacity-50">
-        <div class="grid grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
             @foreach ($this->statuses as $statusValue => $class)
                 <label 
                     class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 shadow-sm {{ $class['text-color'] }} cursor-pointer {{ $status === $statusValue ? $class['bg-color'] : 'bg-white' }}"">
@@ -21,8 +21,8 @@
                 </label>
             @endforeach
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 mt-4 gap-4">
-            <div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 mt-4 gap-4">
+            <div class="col-span-2 sm:col-span-1">
                 <label for="title" class="block text-sm font-medium text-gray-700">
                   Title
                 </label>
@@ -35,7 +35,7 @@
                 >
                 </div>
             </div>
-            <div>
+            <div class="col-span-2 sm:col-span-1">
                 <label for="configuration.text" class="block text-sm font-medium text-gray-700">
                   Text
                 </label>
@@ -47,7 +47,7 @@
                     >
                 </div>
             </div>
-            <div class="w-full" x-data="{ open: false }">
+            <div class="col-span-2 sm:col-span-1 w-full" x-data="{ open: false }">
                 <label for="position" class="block text-sm font-medium text-gray-700">
                     Position
                 </label>
@@ -96,7 +96,7 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="col-span-2 sm:col-span-1">
                 <label for="configuration.timer" class="block text-sm font-medium text-gray-700">
                   Duration
                 </label>
@@ -108,7 +108,7 @@
                     >
                 </div>
             </div>
-            <div class="w-full" x-data="{ open: false }">
+            <div  class="col-span-2 sm:col-span-1 w-full" x-data="{ open: false }">
                 <label for="buttons" class="block text-sm font-medium text-gray-700">
                     Buttons
                 </label>
@@ -244,7 +244,7 @@
                     </div>
                 </div>
             @endif
-            <div>
+            <div class="col-span-2 sm:col-span-1 w-full">
                 <label for="width" class="block text-sm font-medium text-gray-700">
                   Width
                 </label>
@@ -257,7 +257,9 @@
                 >
                 </div>
             </div>
-            <div class="col-span-2 flex items-center space-x-6">
+            <div 
+                class="col-span-2 flex sm:items-center flex-col sm:flex-row space-y-6 sm:space-y-0 sm:space-x-6"
+            >
                 <div class="flex items-center">
                     <div class="flex items-center h-5">
                         <input 
@@ -319,10 +321,10 @@
                     Show Alert
                 </button>
             </div>
-            <div class="col-span-1 md:col-span-2">
+            <div class="col-span-2">
                 <h3 class="mt-4 mb-0"> Generated Code </h3>
                 <p>You can copy generated code below for your convenience and just modify it for your needs. </p>
-                <div class="col-span-1 md:col-span-2 bg-gray-800 rounded-lg px-4 py-6">
+                <div class="col-span-2 bg-gray-800 rounded-lg px-4 py-6">
                     <x-torchlight-code language='php'>{!! $this->generatedConfig !!}</x-torchlight-code>
                 </div>
             </div>

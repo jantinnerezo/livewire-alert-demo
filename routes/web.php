@@ -5,19 +5,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $badges = [
         [
+            'alt' => 'Build Status',
+            'href' => 'https://github.com/jantinnerezo/livewire-alert/actions',
+            'src' => 'https://github.com/jantinnerezo/livewire-alert/workflows/PHPUnit/badge.svg'
+        ],
+        [
             'alt' => 'Latest Stable Version',
-            'href' => '//packagist.org/packages/jantinnerezo/livewire-alert',
-            'src' => 'https://poser.pugx.org/jantinnerezo/livewire-alert/v'
+            'href' => '"https://packagist.org/packages/jantinnerezo/livewire-alert',
+            'src' => 'https://img.shields.io/packagist/v/jantinnerezo/livewire-alert'
         ],
         [
             'alt' => 'Total Downloads',
-            'href' => '//packagist.org/packages/jantinnerezo/livewire-alert',
-            'src' => 'https://poser.pugx.org/jantinnerezo/livewire-alert/downloads'
+            'href' => 'https://packagist.org/packages/jantinnerezo/livewire-alert',
+            'src' => 'https://img.shields.io/packagist/dt/jantinnerezo/livewire-alert'
         ],
         [
             'alt' => 'License',
-            'href' => '//packagist.org/packages/jantinnerezo/livewire-alert',
-            'src' => 'https://poser.pugx.org/jantinnerezo/livewire-alert/license'
+            'href' => 'https://packagist.org/packages/jantinnerezo/livewire-alert',
+            'src' => 'https://img.shields.io/packagist/l/jantinnerezo/livewire-alert'
         ]
     ];
 
