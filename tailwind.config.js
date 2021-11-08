@@ -7,8 +7,7 @@ module.exports = {
      './resources/**/*.blade.php',
      './resources/**/*.js',
      './resources/**/*.vue',
-     './vendor/jantinnerezo/livewire-alert/resources/**/*.blade.php',
-     './vendor/jantinnerezo/livewire-alert/src/LivewireAlert.php'
+     './app/Http/Livewire/**/*.php'
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
