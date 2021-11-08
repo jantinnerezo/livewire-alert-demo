@@ -12,7 +12,7 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "jantinnerezo/livewire-alert": "dev-experimental-2.1.9",
+        "jantinnerezo/livewire-alert": "^2.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.3",
@@ -42,16 +42,6 @@
             "Database\\Seeders\\": "database/seeders/"
         }
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:jantinnerezo/erezo-ui.git"
-        },
-        {
-            "type": "path",
-            "url": "/Users/jantinnerezo/OpenSource/livewire-alert"
-        }
-    ],
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
