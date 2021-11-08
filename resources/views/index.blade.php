@@ -2,7 +2,7 @@
 
 @section('content')
     <x-nav />
-    <div class="prose lg:prose-lg container mx-auto pb-14">
+    <div class="prose prose-sm prose-lg container mx-auto pb-14">
         <x-title :badges="$badges" />
         <hr class="mt-10 mb-5">
         <p>
