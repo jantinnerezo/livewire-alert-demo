@@ -32,8 +32,11 @@
         <meta name="twitter:description" content="This package provides a simple alert utilities for your livewire components.">
         <meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/272130835/4db85f80-4524-11eb-9a4c-b52cece2cf4b">
 
-        <link rel="shortcut icon" type="image/x-heroicon" href="{{ asset('static/logo/app-logo.png') }}">
-
+        <link rel="icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}" />
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('android-chrome-192x192.png') }}" />
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}" />
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}" />
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
