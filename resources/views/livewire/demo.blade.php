@@ -297,8 +297,8 @@
                 <div class="flex items-center">
                     <div class="flex items-center h-5">
                         <input 
-                            id="flash" 
-                            name="flash" 
+                            id="timerProgressBar" 
+                            name="timerProgressBar" 
                             type="checkbox" 
                             value="{{ $configuration['timerProgressBar'] ?? false }}"
                             wire:model="configuration.timerProgressBar"
@@ -306,7 +306,7 @@
                         >
                     </div>
                     <div class="ml-3 text-sm">
-                        <label for="flash" class="font-medium text-gray-700">
+                        <label for="timerProgressBar" class="font-medium text-gray-700">
                             Show Progress Bar
                         </label>
                     </div>
