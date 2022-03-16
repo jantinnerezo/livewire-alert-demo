@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4d4a6880e82f3120c7e500731897bd24",
+    "content-hash": "77d7cc00b9b61cf4f6ea3ba909373b65",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1018,16 +1018,16 @@
         },
         {
             "name": "jantinnerezo/livewire-alert",
-            "version": "2.2.5",
+            "version": "2.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jantinnerezo/livewire-alert.git",
-                "reference": "07783af46b773f26d90ae6efba3b0f1f20e6aa0e"
+                "reference": "352d13719741fce537893bd9372504385bc99d5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jantinnerezo/livewire-alert/zipball/07783af46b773f26d90ae6efba3b0f1f20e6aa0e",
-                "reference": "07783af46b773f26d90ae6efba3b0f1f20e6aa0e",
+                "url": "https://api.github.com/repos/jantinnerezo/livewire-alert/zipball/352d13719741fce537893bd9372504385bc99d5c",
+                "reference": "352d13719741fce537893bd9372504385bc99d5c",
                 "shasum": ""
             },
             "require": {
@@ -1074,7 +1074,7 @@
             ],
             "support": {
                 "issues": "https://github.com/jantinnerezo/livewire-alert/issues",
-                "source": "https://github.com/jantinnerezo/livewire-alert/tree/2.2.5"
+                "source": "https://github.com/jantinnerezo/livewire-alert/tree/2.2.6"
             },
             "funding": [
                 {
@@ -1082,7 +1082,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-03-08T06:27:34+00:00"
+            "time": "2022-03-15T17:39:01+00:00"
         },
         {
             "name": "laravel/framework",
