@@ -1,29 +1,22 @@
 {
-    "name": "livewire-alert-demo",
-    "version": "1.0.0",
-    "main": "index.js",
-    "author": "Jantinn Erezo",
-    "license": "MIT",
     "private": true,
+    "type": "module",
     "scripts": {
-        "dev": "npm run development",
-        "development": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "prod": "npm run production",
-        "production": "mix --production"
+        "build": "vite build",
+        "dev": "vite"
     },
     "devDependencies": {
-        "autoprefixer": "^10.4.0",
-        "laravel-mix": "^6.0.37",
-        "postcss": "^8.3.11",
-        "tailwindcss": "^2.2.19"
+        "@tailwindcss/typography": "^0.5.16",
+        "@tailwindcss/vite": "^4.0.0",
+        "axios": "^1.7.4",
+        "concurrently": "^9.0.1",
+        "daisyui": "^5.0.0-beta.9",
+        "laravel-vite-plugin": "^1.2.0",
+        "tailwindcss": "^4.0.0",
+        "vite": "^6.0.11"
     },
     "dependencies": {
-        "@tailwindcss/forms": "^0.3.4",
-        "@tailwindcss/typography": "^0.4.1",
-        "alpinejs": "^3.5.0",
-        "shiki": "^0.9.12"
+        "shiki": "^3.1.0",
+        "sweetalert2": "^11.17.2"
     }
 }
