@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Http\Livewire\Demo;
+use App\Livewire\Demo;
 use Jantinnerezo\LivewireAlert\Exceptions\AlertException;
 use Livewire\Livewire;
 use Tests\TestCase;
