@@ -30,7 +30,7 @@ class ListIcons extends Component
             ->toArray();
     }
 
-    public function updated($name, $value): void
+    public function updatedIcon(mixed $value): void
     {
         $this->dispatch('updateOptions', options: ['icon' => $value]);
     }

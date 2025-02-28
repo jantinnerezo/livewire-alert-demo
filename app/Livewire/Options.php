@@ -10,9 +10,11 @@ class Options extends Component
 {
     public array $options = [];
 
-    public function updated($name, $value): void
+    public function updated(string $name, mixed $value): void
     {
-        $this->dispatch('updateOptions', options: $value);
+        $this->dispatch('updateOptions', options: [
+            str($name)->after('.')->toString() => $value
+        ]);
     }
 
     public function render()
