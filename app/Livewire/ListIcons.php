@@ -12,11 +12,6 @@ class ListIcons extends Component
 {
     public string $icon;
 
-    public function mount(): void
-    {
-        $this->dispatch('updateOptions', options: ['icon' => $this->icon]);
-    }
-
     #[Computed]
     public function icons(): array
     {

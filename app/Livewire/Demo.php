@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\Livewire;
 
+use App\Actions\HighlightCodeAction;
 use App\Livewire\Concerns\HasGithubBadges;
 use Jantinnerezo\LivewireAlert\Enums\Icon;
 use Jantinnerezo\LivewireAlert\Enums\Position;
 use Jantinnerezo\LivewireAlert\Facades\LivewireAlert;
 use Livewire\Attributes\On;
 use Livewire\Component;
-use Spatie\ShikiPhp\Shiki;
 
 class Demo extends Component
 {   
@@ -29,18 +29,17 @@ class Demo extends Component
 
     public string $code = '';
 
-    public function mount(): void
+    public function mount(HighlightCodeAction $action): void
     {
-        $this->code = $this->highlight('/* Hit show alert or toast to generate code */');
+        $this->code = $action->execute(
+            '/* Hit show alert or toast to generate code */'
+        );
     }
 
     #[On('updateOptions')]
     public function updateOptions($options): void
     {
-        $this->options = [
-            ...$this->options,
-            ...$options,
-        ];
+        $this->options = array_merge($this->options, $options);
     }
 
     public function showAlert(bool $toast = false): void
@@ -64,18 +63,18 @@ class Demo extends Component
         $this->generateCode();
 
         if ($this->options['showConfirmButton'] ?? false) {
-            $alert->showConfirmButton();
-            $this->code .= "\n   ->showConfirmButton()";
+            $alert->withConfirmButton();
+            $this->code .= "\n   ->withConfirmButton()";
         }
 
         if ($this->options['showCancelButton'] ?? false) {
-            $alert->showCancelButton();
-            $this->code .= "\n   ->showCancelButton()";
+            $alert->withCancelButton();
+            $this->code .= "\n   ->withCancelButton()";
         }
 
         if ($this->options['showDenyButton'] ?? false) {
-            $alert->showDenyButton();
-            $this->code .= "\n   ->showDenyButton()";
+            $alert->withDenyButton();
+            $this->code .= "\n   ->withDenyButton()";
         }
 
         if ($toast) {
@@ -104,19 +103,10 @@ class Demo extends Component
         $this->code .= "\n   ->show();";
 
         $this->js(
-            '$refs.code.innerHTML = `' . $this->highlight($this->code) . '`;'
+            '$refs.code.innerHTML = `' . new HighlightCodeAction()->execute($this->code) . '`;'
         );
     }
 
-    protected function highlight(string $code): string
-    {
-        return Shiki::highlight(
-            code: $code,
-            language: 'php',
-            theme: 'catppuccin-mocha',
-        );
-    }
-    
     public function render()
     {
         return view('livewire.demo');

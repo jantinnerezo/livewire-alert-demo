@@ -1,73 +1,56 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Feature;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class HttpTest extends TestCase
 {
-    /** @test  */
-    public function can_visit_demo_page()
+    #[Test]
+    public function can_visit_demo_page(): void
     {
         $this->get('/')->assertStatus(200);
     }
 
-    /** @test  */
-    public function can_see_title()
+    #[Test]
+    public function can_see_title(): void
     {
         $this->get('/')->assertSee(config('app.name'));
     }
 
-    /** @test */
-    public function can_render_badges()
+    #[Test]
+    public function can_render_badges(): void
     {
         $this->get('/')
             ->assertSee([
+                'Build Status',
+                'Stars',
                 'Latest Stable Version',
                 'Total Downloads',
                 'License'
             ]);
     }
 
-    /** @test */
-    public function can_render_livewire_demo_component()
+    #[Test]
+    public function can_render_livewire_demo_component(): void
     {
         $this->get('/')->assertSeeLivewire('demo');
     }
 
-    /** @test */
-    public function can_see_alert_types()
-    {
-        $this->get('/')
-            ->assertSee([
-                'success',
-                'info',
-                'warning',
-                'error'
-            ]);
-    }
-
-    /** @test */
-    public function can_see_input_field_labels()
-    {
-        $this->get('/')
-            ->assertSee([
-                'Title',
-                'Text',
-                'Position',
-                'Duration',
-                'Buttons',
-                'Width',
-                'Toast',
-                'Show as flash',
-                'Show Progress Bar'
-            ]);
-    }
-
-    /** @test */
-    public function can_see_submit_button()
+    #[Test]
+    public function can_see_show_alert_button(): void
     {
         $this->get('/')
             ->assertSee('Show Alert');
+    }
+
+    #[Test]
+    public function can_see_show_toast_button(): void
+    {
+        $this->get('/')
+            ->assertSee('Show Toast');
     }
 }

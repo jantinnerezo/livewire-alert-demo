@@ -12,13 +12,6 @@ class Positions extends Component
 {
     public string $position;
 
-    public function mount(): void
-    {
-        $this->dispatch('updateOptions', options: [
-            'position' => $this->position
-        ]);
-    }
-
     #[Computed]
     public function positions(): array
     {

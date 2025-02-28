@@ -10,14 +10,9 @@ class Options extends Component
 {
     public array $options = [];
 
-    public function mount(): void
-    {
-        $this->dispatch('updateOptions', options: $this->options);
-    }
-
     public function updated($name, $value): void
     {
-        $this->dispatch('updateOptions', options: $this->options);
+        $this->dispatch('updateOptions', options: $value);
     }
 
     public function render()
