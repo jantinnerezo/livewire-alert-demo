@@ -1,6 +1,6 @@
 <div>
     <x-nav />
-
+ 
     <div class="prose mx-auto px-3">
         @include('includes.title')
 

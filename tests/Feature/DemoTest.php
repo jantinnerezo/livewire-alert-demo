@@ -1,75 +1,61 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Feature;
 
+use PHPUnit\Framework\Attributes\Test;
 use App\Livewire\Demo;
-use Jantinnerezo\LivewireAlert\Exceptions\AlertException;
 use Livewire\Livewire;
 use Tests\TestCase;
 
 class DemoTest extends TestCase
 {
-    public function testBasicAlert(): void
+    #[Test]
+    public function it_renders_successfully(): void
+    {
+        Livewire::test(Demo::class)
+            ->assertStatus(200);
+    }
+
+    #[Test]
+    public function it_can_show_alert(): void
     {
         Livewire::test(Demo::class)
             ->call('showAlert')
-            ->assertDispatchedBrowserEvent('alert');
+            ->assertSee('Hello World')
+            ->assertSee('This is a demo of Livewire Alert.');
     }
 
-    public function testBasicFlashAlert(): void
+    #[Test]
+    public function it_can_show_alert_with_custom_options(): void
     {
         Livewire::test(Demo::class)
-            ->set('flash', true)
+            ->call('updateOptions', [
+                'title' => 'Custom Title',
+                'text' => 'Custom Text',
+            ])
             ->call('showAlert')
-            ->assertRedirect('/')
-            ->assertSessionHas('livewire-alert');
+            ->assertSee('Custom Title')
+            ->assertSee('Custom Text');
     }
 
-    public function testAlertConfirm(): void
+    #[Test]
+    public function it_can_see_default_generated_code(): void
     {
         Livewire::test(Demo::class)
-            ->set('configuration.showConfirmButton', true)
+            ->assertSee('/* Hit show alert or toast to generate code */');
+    }
+
+    #[Test]
+    public function it_can_generate_code_on_show_alert(): void
+    {
+        Livewire::test(Demo::class)
             ->call('showAlert')
-            ->assertDispatchedBrowserEvent('alert');
-    }
-
-    public function testAlertDenied(): void
-    {
-        Livewire::test(Demo::class)
-            ->set('configuration.showDenyButton', true)
-            ->set('configuration.onDenied', 'denied')
-            ->call('showAlert')
-            ->assertDispatchedBrowserEvent('alert');
-    }
-
-    public function testAlertDismissed(): void
-    {
-        Livewire::test(Demo::class)
-            ->set('configuration.showCancelButton', true)
-            ->set('configuration.onDismissed', 'dismissed')
-            ->call('showAlert')
-            ->assertDispatchedBrowserEvent('alert');
-    }
-
-    public function testProgressDismissal(): void
-    {
-        Livewire::test(Demo::class)
-            ->set('configuration.timerProgressBar', true)
-            ->set('configuration.timer', 3000)
-            ->set('configuration.onProgressFinished', 'progressFinished')
-            ->call('showAlert')
-            ->assertDispatchedBrowserEvent('alert');
-    }
-
-    public function testExceptionIsThrownWhenIconIsInvalid()
-    {
-        $invalidIcon = 'failed';
-        
-        $this->expectException(AlertException::class);
-        $this->expectExceptionMessage("Invalid '{$invalidIcon}' alert icon.");
-
-        Livewire::test(Demo::class)
-            ->set('status', $invalidIcon)
-            ->call('showAlert');
+            ->assertViewHas('code', function ($code) {
+                return str($code)
+                    ->contains('LivewireAlert::title') &&
+                    str($code)->contains('show()');
+            });
     }
 }
