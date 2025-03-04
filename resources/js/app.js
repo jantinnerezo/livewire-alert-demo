@@ -1,4 +1,3 @@
-import Alpine from 'alpinejs'
+import Swal from 'sweetalert2'
 
-window.Alpine = Alpine
-window.Alpine.start()
+window.Swal = Swal

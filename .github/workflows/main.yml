@@ -13,8 +13,8 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 7.4
-          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
+          php-version: 8.4
+          extensions: dom, curl, libxml, mbstring, zip, pcntl
           coverage: none
 
       - name: Install Composer dependencies
@@ -24,7 +24,7 @@ jobs:
         run: npm i
 
       - name: Compile assets
-        run: npm run prod
+        run: npm run build
         
       - name: Prepare Laravel Application
         run: |

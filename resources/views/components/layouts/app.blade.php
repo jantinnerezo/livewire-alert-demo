@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html 
+    lang="{{ str_replace('_', '-', app()->getLocale()) }}" 
+    data-theme="dracula"
+>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,14 +41,13 @@
         <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}" />
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}" />
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        @livewireStyles
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQR4W43B8V"></script>
@@ -57,14 +59,8 @@
             gtag('config', 'G-PQR4W43B8V');
         </script>
     </head>
-    <body class="bg-cool-gray-50">
-        @yield('body')
 
-        @livewireScripts
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-        <script src="{{ asset('vendor/livewire-alert/livewire-alert.js') }}"></script>
-        <x-livewire-alert::flash />
-        <script src="{{ mix('js/app.js') }}"></script>
-        @stack('scripts')
+    <body>
+        {{ $slot }}
     </body>
 </html>
