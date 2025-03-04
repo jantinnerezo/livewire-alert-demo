@@ -13,7 +13,7 @@
             </a> documentation.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div wire:loading.class="opacity-50" class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="col-span-2 md:col-span-1">
                 @livewire('list-icons', ['icon' => $options['icon']])
             </div>
