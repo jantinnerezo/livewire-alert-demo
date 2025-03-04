@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Feature;
+namespace Tests\Feature\Livewire;
 
 use PHPUnit\Framework\Attributes\Test;
 use App\Livewire\Demo;
