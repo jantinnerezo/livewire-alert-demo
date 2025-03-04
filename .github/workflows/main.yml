@@ -24,7 +24,7 @@ jobs:
         run: npm i
 
       - name: Compile assets
-        run: npm run prod
+        run: npm run build
         
       - name: Prepare Laravel Application
         run: |
