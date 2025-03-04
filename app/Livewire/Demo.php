@@ -6,6 +6,8 @@ namespace App\Livewire;
 
 use App\Actions\HighlightCodeAction;
 use App\Livewire\Concerns\HasGithubBadges;
+use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
+use DanHarrin\LivewireRateLimiting\WithRateLimiting;
 use Jantinnerezo\LivewireAlert\Enums\Icon;
 use Jantinnerezo\LivewireAlert\Enums\Position;
 use Jantinnerezo\LivewireAlert\Facades\LivewireAlert;
@@ -15,16 +17,20 @@ use Livewire\Component;
 class Demo extends Component
 {   
     use HasGithubBadges;
+    use WithRateLimiting;
 
     public array $options = [
         'icon' => Icon::Success->value,
         'title' => 'Hello World',
         'text' => 'This is a demo of Livewire Alert.',
         'timer' => 3000,
-        'position' => Position::TopEnd->value,
+        'position' => Position::Center->value,
         'confirmButtonText' => 'OK',
         'cancelButtonText' => 'Cancel',
         'denyButtonText' => 'Deny',
+        'confirmButtonColor' => '#00a63e',
+        'cancelButtonColor' => '#414558',
+        'denyButtonColor' => '#ff5555'
     ]; 
 
     public string $code = '';
@@ -41,16 +47,22 @@ class Demo extends Component
     {
         $this->options = array_merge($this->options, $options);
     }
-
+    
     public function showAlert(bool $toast = false): void
     {
+        try {
+            $this->rateLimit(15);
+        } catch (TooManyRequestsException $exception) {
+            LivewireAlert::title('Whooa! slow down!')
+                ->text('You can only show 20 alerts per minute!')
+                ->error()
+                ->show();
+        }
+
         $alert = LivewireAlert::title($this->options['title'] ?? '')
             ->text($this->options['text'] ?? '')
             ->position($this->options['position'] ?? Position::TopEnd->value)
-            ->timer((int) $this->options['timer'] ?? null)
-            ->confirmButtonText($this->options['confirmButtonText'] ?? '')
-            ->cancelButtonText($this->options['cancelButtonText'] ?? '')
-            ->denyButtonText($this->options['denyButtonText'] ?? '');
+            ->timer((int) $this->options['timer']);
     
         match (Icon::from($this->options['icon'])) {
             Icon::Success => $alert->success(),
@@ -63,18 +75,45 @@ class Demo extends Component
         $this->generateCode();
 
         if ($this->options['showConfirmButton'] ?? false) {
-            $alert->withConfirmButton();
-            $this->code .= "\n   ->withConfirmButton()";
+            $alert->withConfirmButton($this->options['confirmButtonText']);
+
+            $this->code .= "\n   ->withConfirmButton('{$this->options['confirmButtonText']}')";
+
+            if (filled($this->options['confirmButtonColor'])) {
+                $alert->confirmButtonColor(
+                    $this->options['confirmButtonColor']
+                );
+
+                $this->code .= "\n   ->confirmButtonColor('{$this->options['confirmButtonColor']}')";
+            }
         }
 
         if ($this->options['showCancelButton'] ?? false) {
-            $alert->withCancelButton();
-            $this->code .= "\n   ->withCancelButton()";
+            $alert->withCancelButton($this->options['cancelButtonText']);
+
+            $this->code .= "\n   ->withCancelButton('{$this->options['cancelButtonText']}')";
+
+            if (filled($this->options['cancelButtonColor'])) {
+                $alert->cancelButtonColor(
+                    $this->options['cancelButtonColor']
+                );
+
+                $this->code .= "\n   ->cancelButtonColor('{$this->options['cancelButtonColor']}')";
+            }
         }
 
         if ($this->options['showDenyButton'] ?? false) {
-            $alert->withDenyButton();
-            $this->code .= "\n   ->withDenyButton()";
+            $alert->withDenyButton($this->options['denyButtonText']);
+
+            $this->code .= "\n   ->withDenyButton('{$this->options['denyButtonText']}')";
+
+            if (filled($this->options['denyButtonColor'])) {
+                $alert->denyButtonColor(
+                    $this->options['denyButtonColor']
+                );
+
+                $this->code .= "\n   ->denyButtonColor('{$this->options['denyButtonColor']}')";
+            }
         }
 
         if ($toast) {
@@ -92,10 +131,7 @@ class Demo extends Component
         $this->code = "LivewireAlert::title('{$this->options['title']}')\n" .
         "   ->text('{$this->options['text']}')\n" .
         "   ->position('{$this->options['position']}')\n" .
-        "   ->timer({$this->options['timer']})\n" .
-        "   ->confirmButtonText('{$this->options['confirmButtonText']}')\n" .
-        "   ->cancelButtonText('{$this->options['cancelButtonText']}')\n" .
-        "   ->denyButtonText('{$this->options['denyButtonText']}')";
+        "   ->timer({$this->options['timer']})";
     }
 
     protected function showGeneratedCode(): void

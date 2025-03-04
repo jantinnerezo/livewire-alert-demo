@@ -10,7 +10,7 @@
                         <input 
                             type="radio" 
                             name="position" 
-                            wire:model.defer="position"
+                            wire:model.live="position"
                             value="{{ $position['value'] }}"
                             class="radio radio-primary" 
                             checked="checked" 

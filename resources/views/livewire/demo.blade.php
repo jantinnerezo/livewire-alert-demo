@@ -5,7 +5,10 @@
         @include('includes.title')
 
         <p class="mt-0">
-            Welcome to the interactive demo for the Livewire Alert. Here, you can test and explore its functionality in real-time. Customize the alerts and see how they behave dynamically. For additional configuration options and advanced features, refer to the official <a class="text-primary" href="https://sweetalert2.github.io/#configuration">
+            Welcome to the interactive demo for the Livewire Alert. Here, you can test and explore its functionality in real-time. Customize the alerts and see how they behave dynamically. For additional configuration options and advanced features, refer to the official <a 
+                class="text-primary" 
+                href="https://sweetalert2.github.io/#configuration"
+            >
                 <strong>SweetAlert2</strong>
             </a> documentation.
         </p>
@@ -45,7 +48,8 @@
 
         <div>
             <p>
-                If you'd like to contribute to this demo, suggest improvements, or report issues, feel free to submit a Pull Request (PR) or open an issue to this demo's <a href="https://github.com/jantinnerezo/livewire-alert-demo/issues">
+                If you'd like to contribute to this demo, suggest improvements, or report issues, feel free to submit a Pull Request (PR) or open an issue to this demo's 
+                <a href="https://github.com/jantinnerezo/livewire-alert-demo/issues">
                     <strong> Github </strong>
                 </a> repo.
             </p>

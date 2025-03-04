@@ -11,82 +11,95 @@
             </fieldset>
 
             <fieldset class="fieldset col-span-2 md:col-span-1 w-full">
+                <legend class="fieldset-legend">Timer</legend>
+                <input type="number" wire:model.lazy="options.timer" class="input w-full" />
+            </fieldset>
+
+            <fieldset class="fieldset col-span-2 w-full">
                 <legend class="fieldset-legend">Text</legend>
                 <input type="text" wire:model.lazy="options.text" class="input w-full" />
             </fieldset>
 
             <fieldset class="fieldset col-span-2 md:col-span-1 w-full">
-                <legend class="fieldset-legend">Timer</legend>
-                <input type="number" wire:model.lazy="options.timer" class="input w-full" />
-                <p class="fieldset-label mt-0 mb-0">
-                    Auto close timer of the popup. Set in ms (milliseconds)
-                </p>
-            </fieldset>
-
-            <fieldset class="fieldset col-span-2 md:col-span-1 w-full">
-                <legend class="fieldset-legend">Confirm button text</legend>
-                <input 
-                    type="text" 
-                    wire:model.lazy="options.confirmButtonText" 
-                    class="input w-full"
-                />
-                <p class="fieldset-label mt-0 mb-0">
-                    Use this to change the text on the "Confirm" button
-                </p>
-            </fieldset>
-
-            <fieldset class="fieldset col-span-2 md:col-span-1 w-full">
-                <legend class="fieldset-legend">Cancel button text</legend>
-                <input 
-                    type="text" 
-                    wire:model.lazy="options.cancelButtonText" 
-                    class="input w-full"
-                />
-                <p class="fieldset-label mt-0 mb-0">
-                    Use this to change the text on the "Cancel" button
-                </p>
-            </fieldset>
-
-            <fieldset class="fieldset col-span-2 md:col-span-1 w-full">
-                <legend class="fieldset-legend">Deny button text</legend>
-                <input 
-                    type="text" 
-                    wire:model.lazy="options.denyButtonText"
-                    class="input w-full"
-                />
-                <p class="fieldset-label mt-0 mb-0">
-                    Use this to change the text on the "Deny" button
-                </p>
-            </fieldset>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 col-span-2 gap-4">
+                <legend class="fieldset-legend">Confirm Button</legend>
                 <label>
                     <input 
                         type="checkbox" 
                         class="toggle toggle-primary mr-1" 
-                        wire:model.live="options.showConfirmButton"
+                        wire:model.lazy="options.showConfirmButton"
                     />
                     Show confirm button
                 </label>
+                <fieldset class="fieldset col-span-2 md:col-span-1 w-full">
+                    <legend class="fieldset-legend">Confirm button text</legend>
+                    <div class="flex gap-2">
+                        <input 
+                            type="text" 
+                            wire:model.lazy="options.confirmButtonText" 
+                            class="input w-full"
+                        />
+                        <input 
+                            type="color" 
+                            wire:model.lazy="options.confirmButtonColor" 
+                            class="input w-10 px-0.5"
+                        />
+                    </div>
+                </fieldset>
+            </fieldset>
 
+            <fieldset class="fieldset col-span-2 md:col-span-1 w-full">
+                <legend class="fieldset-legend">Cancel Button</legend>
                 <label>
                     <input 
                         type="checkbox" 
                         class="toggle toggle-primary mr-1" 
-                        wire:model.live="options.showCancelButton"
+                        wire:model.lazy="options.showCancelButton"
                     />
                     Show cancel button
                 </label>
+                <fieldset class="fieldset col-span-2 md:col-span-1 w-full">
+                    <legend class="fieldset-legend">Cancel button text</legend>
+                    <div class="flex gap-2">
+                        <input 
+                            type="text" 
+                            wire:model.lazy="options.cancelButtonText" 
+                            class="input w-full"
+                        />
+                        <input 
+                            type="color" 
+                            wire:model.lazy="options.cancelButtonColor" 
+                            class="input w-10 px-0.5"
+                        />
+                    </div>
+                </fieldset>
+            </fieldset>
 
+            <fieldset class="fieldset col-span-2 md:col-span-1 w-full">
+                <legend class="fieldset-legend">Deny Button</legend>
                 <label>
                     <input 
                         type="checkbox" 
                         class="toggle toggle-primary mr-1" 
-                        wire:model.live="options.showDenyButton"
+                        wire:model.lazy="options.showDenyButton"
                     />
                     Show deny button
                 </label>
-            </div>
+                <fieldset class="fieldset col-span-2 md:col-span-1 w-full">
+                    <legend class="fieldset-legend">Deny button text</legend>
+                    <div class="flex gap-2">
+                        <input 
+                            type="text" 
+                            wire:model.lazy="options.denyButtonText" 
+                            class="input w-full"
+                        />
+                        <input 
+                            type="color" 
+                            wire:model.lazy="options.denyButtonColor" 
+                            class="input w-10 px-0.5"
+                        />
+                    </div>
+                </fieldset>
+            </fieldset>
         </div>
     </fieldset>
 </div>

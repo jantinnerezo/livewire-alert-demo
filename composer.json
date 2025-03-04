@@ -9,8 +9,9 @@
     "license": "MIT",
     "require": {
         "php": "^8.4",
+        "danharrin/livewire-rate-limiting": "^2.1",
         "guzzlehttp/guzzle": "^7.0.1",
-        "jantinnerezo/livewire-alert": "4.x-dev",
+        "jantinnerezo/livewire-alert": "^4.0",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^3.6.0",
@@ -45,12 +46,6 @@
             "Tests\\": "tests/"
         }
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/Users/jantinnerezo/Projects/OpenSource/livewire-alert"
-        }
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
