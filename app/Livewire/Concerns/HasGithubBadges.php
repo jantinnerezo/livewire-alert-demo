@@ -14,7 +14,7 @@ trait HasGithubBadges
         ],
         [
             'alt' => 'Stars',
-            'href' => 'https://img.shields.io/github/stars/jantinnerezo/livewire-alert',
+            'href' => 'https://github.com/jantinnerezo/livewire-alert',
             'src' => 'https://img.shields.io/github/stars/jantinnerezo/livewire-alert'
         ],
         [
