@@ -8,7 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.4",
+        "php": "^8.3",
         "danharrin/livewire-rate-limiting": "^2.1",
         "guzzlehttp/guzzle": "^7.0.1",
         "jantinnerezo/livewire-alert": "^4.0",
