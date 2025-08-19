@@ -8,6 +8,7 @@ use App\Actions\HighlightCodeAction;
 use App\Livewire\Concerns\HasGithubBadges;
 use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
 use DanHarrin\LivewireRateLimiting\WithRateLimiting;
+use Illuminate\Support\Js;
 use Jantinnerezo\LivewireAlert\Enums\Icon;
 use Jantinnerezo\LivewireAlert\Enums\Position;
 use Jantinnerezo\LivewireAlert\Facades\LivewireAlert;
@@ -139,8 +140,9 @@ class Demo extends Component
         $this->code .= "\n   ->show();";
 
         $this->js(
-            '$refs.code.innerHTML = `' . new HighlightCodeAction()->execute($this->code) . '`;'
+            '$refs.code.innerHTML = ' . Js::from((new HighlightCodeAction())->execute($this->code)) . ';'
         );
+
     }
 
     public function render()
