@@ -12,9 +12,11 @@ use Illuminate\Support\Js;
 use Jantinnerezo\LivewireAlert\Enums\Icon;
 use Jantinnerezo\LivewireAlert\Enums\Position;
 use Jantinnerezo\LivewireAlert\Facades\LivewireAlert;
+use Livewire\Attributes\Layout;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
+#[Layout('components.layouts.app')]
 class Demo extends Component
 {   
     use HasGithubBadges;

@@ -11,17 +11,15 @@
         "php": "^8.3",
         "danharrin/livewire-rate-limiting": "^2.1",
         "guzzlehttp/guzzle": "^7.0.1",
-        "jantinnerezo/livewire-alert": "^4.0",
-        "laravel/framework": "^12.0",
-        "laravel/tinker": "^2.5",
-        "livewire/livewire": "^3.6.0",
+        "jantinnerezo/livewire-alert": "4.0.9",
+        "laravel/framework": "^13.0",
+        "livewire/livewire": "^4.0",
         "spatie/shiki-php": "^2.3"
     },
     "require-dev": {
-        "spatie/laravel-ignition": "^2.0",
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.2",
-        "nunomaduro/collision": "^8.6.1",
+        "nunomaduro/collision": "^8.0",
         "phpunit/phpunit": "^11.0"
     },
     "config": {
