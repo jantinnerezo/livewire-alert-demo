@@ -1,6 +1,7 @@
 @props([
     'title' => null,
     'description' => null,
+    'language' => 'php',
 ])
 
 @php
@@ -35,18 +36,7 @@
     @endisset
 
     @isset($code)
-        <div class="overflow-hidden rounded-xl border border-white/10 bg-[#17151c] text-sm shadow-[0_18px_60px_rgba(0,0,0,0.18)]">
-            <div class="flex items-center justify-between border-b border-white/10 bg-zinc-950/50 px-4 py-2.5">
-                <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-rose-200">
-                    <span class="size-2 rounded-full bg-rose-300"></span>
-                    PHP
-                </div>
-                <span class="font-mono text-[11px] text-zinc-600">LivewireAlert</span>
-            </div>
-            <div class="overflow-x-auto p-4 text-[13px] leading-6 [&_pre]:!m-0 [&_pre]:!bg-transparent [&_pre]:!p-0">
-                {!! app(\App\Actions\HighlightCodeAction::class)->execute(trim($code)) !!}
-            </div>
-        </div>
+        <x-docs.code :language="$language">{{ $code }}</x-docs.code>
     @endisset
 
     <div class="[&_a]:font-medium [&_a]:text-rose-200 [&_a:hover]:text-rose-100 [&_code]:rounded [&_code]:bg-zinc-900 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-xs [&_code]:text-zinc-200">
