@@ -1,5 +1,12 @@
 @import 'tailwindcss';
+@import '../../vendor/livewire/flux/dist/flux.css';
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
     themes: light --default, dark --prefersdark, dracula;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: Inter, sans-serif;
 }

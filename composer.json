@@ -11,8 +11,9 @@
         "php": "^8.3",
         "danharrin/livewire-rate-limiting": "^2.1",
         "guzzlehttp/guzzle": "^7.0.1",
-        "jantinnerezo/livewire-alert": "4.0.9",
+        "jantinnerezo/livewire-alert": "^4.2.0",
         "laravel/framework": "^13.0",
+        "livewire/flux": "^2.14",
         "livewire/livewire": "^4.0",
         "spatie/shiki-php": "^2.3"
     },

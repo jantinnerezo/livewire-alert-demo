@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc3364a12b96b6213ad96d554033737e",
+    "content-hash": "340ca9c91236051232f58d4e8c324a0e",
     "packages": [
         {
             "name": "brick/math",
@@ -1109,16 +1109,16 @@
         },
         {
             "name": "jantinnerezo/livewire-alert",
-            "version": "v4.0.9",
+            "version": "v4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jantinnerezo/livewire-alert.git",
-                "reference": "6d49bab35636125cd5c661055a3e9f44a9deb136"
+                "reference": "a2eefb074b1f1b703efa9ebfbea3b7b848266d3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jantinnerezo/livewire-alert/zipball/6d49bab35636125cd5c661055a3e9f44a9deb136",
-                "reference": "6d49bab35636125cd5c661055a3e9f44a9deb136",
+                "url": "https://api.github.com/repos/jantinnerezo/livewire-alert/zipball/a2eefb074b1f1b703efa9ebfbea3b7b848266d3c",
+                "reference": "a2eefb074b1f1b703efa9ebfbea3b7b848266d3c",
                 "shasum": ""
             },
             "require": {
@@ -1167,9 +1167,9 @@
             ],
             "support": {
                 "issues": "https://github.com/jantinnerezo/livewire-alert/issues",
-                "source": "https://github.com/jantinnerezo/livewire-alert/tree/v4.0.9"
+                "source": "https://github.com/jantinnerezo/livewire-alert/tree/v4.2.0"
             },
-            "time": "2026-03-24T18:43:02+00:00"
+            "time": "2026-05-18T08:32:01+00:00"
         },
         {
             "name": "laravel/framework",
@@ -2071,6 +2071,72 @@
                 }
             ],
             "time": "2026-03-08T20:05:35+00:00"
+        },
+        {
+            "name": "livewire/flux",
+            "version": "v2.14.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/livewire/flux.git",
+                "reference": "44f240efd186b5629d5e4c4a4cc7bbba0111fb48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/livewire/flux/zipball/44f240efd186b5629d5e4c4a4cc7bbba0111fb48",
+                "reference": "44f240efd186b5629d5e4c4a4cc7bbba0111fb48",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^10.0|^11.0|^12.0|^13.0",
+                "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
+                "illuminate/view": "^10.0|^11.0|^12.0|^13.0",
+                "laravel/prompts": "^0.1|^0.2|^0.3",
+                "livewire/livewire": "^3.7.4|^4.0",
+                "php": "^8.1",
+                "symfony/console": "^6.0|^7.0|^8.0"
+            },
+            "conflict": {
+                "livewire/blaze": "<1.0.0-beta.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Flux": "Flux\\Flux"
+                    },
+                    "providers": [
+                        "Flux\\FluxServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Flux\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Caleb Porzio",
+                    "email": "calebporzio@gmail.com"
+                }
+            ],
+            "description": "The official UI component library for Livewire.",
+            "keywords": [
+                "components",
+                "flux",
+                "laravel",
+                "livewire",
+                "ui"
+            ],
+            "support": {
+                "issues": "https://github.com/livewire/flux/issues",
+                "source": "https://github.com/livewire/flux/tree/v2.14.1"
+            },
+            "time": "2026-04-23T23:00:08+00:00"
         },
         {
             "name": "livewire/livewire",

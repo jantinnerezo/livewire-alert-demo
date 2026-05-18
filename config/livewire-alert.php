@@ -15,7 +15,7 @@ return [
     'confirmButtonText' => 'Yes',
     'cancelButtonText' => 'Cancel',
     'denyButtonText' => 'No',
-    'showCancelButton' => true,
-    'showConfirmButton' => true,
+    'showCancelButton' => false,
+    'showConfirmButton' => false,
     'backdrop' => true,
 ];

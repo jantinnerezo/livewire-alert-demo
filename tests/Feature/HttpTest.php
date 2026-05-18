@@ -10,47 +10,73 @@ use Tests\TestCase;
 class HttpTest extends TestCase
 {
     #[Test]
-    public function can_visit_demo_page(): void
+    public function can_visit_docs_home_page(): void
     {
         $this->get('/')->assertStatus(200);
     }
 
     #[Test]
-    public function can_see_title(): void
+    public function can_visit_installation_page(): void
     {
-        $this->get('/')->assertSee(config('app.name'));
+        $this->get('/installation')->assertStatus(200);
     }
 
     #[Test]
-    public function can_render_badges(): void
+    public function can_visit_timer_page(): void
+    {
+        $this->get('/timers')->assertStatus(200);
+    }
+
+    #[Test]
+    public function docs_pages_render_seo_metadata(): void
+    {
+        $paths = [
+            '/',
+            '/installation',
+            '/basic-usage',
+            '/toasts',
+            '/timers',
+            '/buttons',
+            '/button-events',
+            '/confirm',
+            '/inputs',
+            '/loading',
+            '/updating',
+            '/flash',
+            '/customization',
+            '/dependency-injection',
+        ];
+
+        foreach ($paths as $path) {
+            $this->get($path)
+                ->assertStatus(200)
+                ->assertSee('<title>', false)
+                ->assertSee('name="description"', false)
+                ->assertSee('rel="canonical"', false)
+                ->assertSee($path, false)
+                ->assertSee('property="og:title"', false)
+                ->assertSee('property="og:description"', false)
+                ->assertSee('name="twitter:card"', false);
+        }
+    }
+
+    #[Test]
+    public function docs_header_links_to_sweetalert2(): void
     {
         $this->get('/')
-            ->assertSee([
-                'Build Status',
-                'Stars',
-                'Latest Stable Version',
-                'Total Downloads',
-                'License'
-            ]);
+            ->assertSee('SweetAlert2')
+            ->assertSee('https://sweetalert2.github.io/', false);
     }
 
     #[Test]
-    public function can_render_livewire_demo_component(): void
-    {
-        $this->get('/')->assertSeeLivewire('demo');
-    }
-
-    #[Test]
-    public function can_see_show_alert_button(): void
+    public function docs_show_readme_package_pulse(): void
     {
         $this->get('/')
-            ->assertSee('Show Alert');
-    }
-
-    #[Test]
-    public function can_see_show_toast_button(): void
-    {
-        $this->get('/')
-            ->assertSee('Show Toast');
+            ->assertSee('Package Pulse')
+            ->assertSee('jantinnerezo/livewire-alert')
+            ->assertSee('Build Status')
+            ->assertSee('PHPStan Analysis')
+            ->assertSee('Total Downloads')
+            ->assertSee('License');
     }
 }
