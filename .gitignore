@@ -14,3 +14,6 @@ yarn-error.log
 .phpunit.cache
 /.idea
 /public/build
+/public/css/filament
+/public/js/filament
+/public/fonts/filament

@@ -16,6 +16,7 @@
         'flash' => 'Show Livewire Alert notifications after redirects by reading flashed session data in Livewire components.',
         'customization' => 'Customize Livewire Alert images, CSS classes, button order, and raw SweetAlert2 options.',
         'dependency-injection' => 'Use dependency injection with the LivewireAlert service instead of facade calls in Livewire components.',
+        'ai-skill' => 'Copyable AI skill markdown for Livewire Alert — teach Claude, Cursor, or any coding assistant the full package API in one paste.',
         default => 'Documentation for the livewire-alert package: fluent SweetAlert2 notifications for Laravel Livewire.',
     };
 
@@ -85,6 +86,9 @@
             ['Flash Alerts', '/flash'],
             ['Customization', '/customization'],
             ['Dependency Injection', '/dependency-injection'],
+        ],
+        'For AI Assistants' => [
+            ['AI Skill', '/ai-skill'],
         ],
         'Resources' => [
             ['SweetAlert2', 'https://sweetalert2.github.io/', true],
@@ -189,6 +193,9 @@
         'dependency-injection' => [
             ['Inject the alert', 'inject-the-alert'],
             ['When to use it', 'when-to-use-it'],
+        ],
+        'ai-skill' => [
+            ['How to use it', 'how-to-use'],
         ],
         default => [
             ['Try it', 'try-it'],

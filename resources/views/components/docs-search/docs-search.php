@@ -163,6 +163,13 @@ new class extends Component
                 'description' => 'Type-hint the LivewireAlert service instead of using the facade.',
                 'keywords' => 'dependency injection type hint facade service',
             ],
+            [
+                'title' => 'AI Skill',
+                'section' => 'For AI Assistants',
+                'url' => '/ai-skill',
+                'description' => 'Copyable SKILL.md for Claude, Cursor, and other AI coding assistants.',
+                'keywords' => 'ai skill claude cursor copilot windsurf llm assistant copy markdown SKILL.md cursorrules windsurfrules prompt context',
+            ],
         ];
     }
 };

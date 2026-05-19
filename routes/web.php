@@ -19,3 +19,4 @@ Route::livewire('/updating', 'pages::docs.updating');
 Route::livewire('/flash', 'pages::docs.flash');
 Route::livewire('/customization', 'pages::docs.customization');
 Route::livewire('/dependency-injection', 'pages::docs.dependency-injection');
+Route::livewire('/ai-skill', 'pages::docs.ai-skill');
