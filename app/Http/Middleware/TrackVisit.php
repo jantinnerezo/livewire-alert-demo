@@ -40,6 +40,10 @@ class TrackVisit
             return false;
         }
 
+        if ($this->isIgnoredIp((string) $request->ip())) {
+            return false;
+        }
+
         if ($response->getStatusCode() >= 400) {
             return false;
         }
@@ -59,5 +63,48 @@ class TrackVisit
         }
 
         return true;
+    }
+
+    private function isIgnoredIp(string $ip): bool
+    {
+        $entries = array_filter(array_map('trim', explode(',', (string) config('analytics.ignored_ips'))));
+
+        foreach ($entries as $entry) {
+            if (str_contains($entry, '/')) {
+                if ($this->ipInCidr($ip, $entry)) {
+                    return true;
+                }
+
+                continue;
+            }
+
+            if ($ip === $entry) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private function ipInCidr(string $ip, string $cidr): bool
+    {
+        [$subnet, $bits] = array_pad(explode('/', $cidr, 2), 2, null);
+
+        $ipLong = ip2long($ip);
+        $subnetLong = ip2long((string) $subnet);
+
+        if ($ipLong === false || $subnetLong === false || $bits === null) {
+            return false;
+        }
+
+        $bits = (int) $bits;
+
+        if ($bits < 0 || $bits > 32) {
+            return false;
+        }
+
+        $mask = $bits === 0 ? 0 : (-1 << (32 - $bits)) & 0xFFFFFFFF;
+
+        return ($ipLong & $mask) === ($subnetLong & $mask);
     }
 }
