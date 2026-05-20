@@ -24,6 +24,43 @@
     $fullTitle = $pageTitle !== '' ? "{$pageTitle} - Livewire Alert" : 'Livewire Alert - Documentation';
     $canonicalUrl = url($current === '' ? '/' : "/{$current}");
     $socialImage = asset('android-chrome-512x512.png');
+
+    $structuredData = [
+        '@context' => 'https://schema.org',
+        '@graph' => [
+            [
+                '@type' => 'WebSite',
+                '@id' => url('/') . '#website',
+                'url' => url('/'),
+                'name' => 'Livewire Alert',
+                'description' => 'Documentation for Livewire Alert, a fluent SweetAlert2 notification package for Laravel Livewire.',
+                'inLanguage' => 'en',
+            ],
+            [
+                '@type' => 'SoftwareSourceCode',
+                '@id' => url('/') . '#software',
+                'name' => 'Livewire Alert',
+                'description' => 'Fluent SweetAlert2 alerts, toasts, confirmations, inputs, and loading states for Laravel Livewire.',
+                'url' => url('/'),
+                'codeRepository' => 'https://github.com/jantinnerezo/livewire-alert',
+                'programmingLanguage' => 'PHP',
+                'runtimePlatform' => 'Laravel Livewire',
+                'author' => [
+                    '@type' => 'Person',
+                    'name' => 'Jantinn Erezo',
+                ],
+            ],
+            [
+                '@type' => 'TechArticle',
+                'headline' => $fullTitle,
+                'description' => $pageDescription,
+                'url' => $canonicalUrl,
+                'inLanguage' => 'en',
+                'isPartOf' => ['@id' => url('/') . '#website'],
+                'about' => ['@id' => url('/') . '#software'],
+            ],
+        ],
+    ];
 @endphp
 
 <!DOCTYPE html>
@@ -60,6 +97,10 @@
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700&display=swap" rel="stylesheet" />
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <script type="application/ld+json">
+        {!! json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
