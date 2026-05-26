@@ -51,7 +51,7 @@ class WarmDocsCacheCommand extends Command
 
     private function renderPath(HttpKernel $kernel, string $path): Response
     {
-        $request = Request::create($path, 'GET', server: [
+        $request = Request::create($this->urlFor($path), 'GET', server: [
             'HTTP_USER_AGENT' => 'LivewireAlertDocsCacheWarmerBot/1.0',
         ]);
 
@@ -60,5 +60,10 @@ class WarmDocsCacheCommand extends Command
         $kernel->terminate($request, $response);
 
         return $response;
+    }
+
+    private function urlFor(string $path): string
+    {
+        return rtrim((string) config('app.url'), '/').($path === '/' ? '' : $path);
     }
 }
