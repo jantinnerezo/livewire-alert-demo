@@ -2,29 +2,19 @@
 
 declare(strict_types=1);
 
+use Carbon\CarbonImmutable;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 
-$docPaths = [
-    '/',
-    '/installation',
-    '/basic-usage',
-    '/toasts',
-    '/timers',
-    '/buttons',
-    '/button-events',
-    '/confirm',
-    '/inputs',
-    '/loading',
-    '/updating',
-    '/flash',
-    '/customization',
-    '/dependency-injection',
-    '/ai-skill',
-];
+$docPages = config('docs.pages');
+$docPaths = collect($docPages)->pluck('path');
 
 Route::get('/sitemap.xml', function () use ($docPaths) {
-    $lastmod = now()->toAtomString();
+    $lastmod = CarbonImmutable::createFromTimestamp(
+        collect(File::allFiles(resource_path('views/pages/docs')))
+            ->max(fn ($file): int => $file->getMTime()) ?: time()
+    )->toAtomString();
 
     $urls = collect($docPaths)->map(function (string $path) use ($lastmod) {
         $loc = e(url($path));
@@ -38,19 +28,6 @@ Route::get('/sitemap.xml', function () use ($docPaths) {
     return Response::make($xml, 200, ['Content-Type' => 'application/xml']);
 });
 
-Route::livewire('/', 'pages::docs.home');
-
-Route::livewire('/installation', 'pages::docs.installation');
-Route::livewire('/basic-usage', 'pages::docs.basic-usage');
-Route::livewire('/toasts', 'pages::docs.toasts');
-Route::livewire('/timers', 'pages::docs.timers');
-Route::livewire('/buttons', 'pages::docs.buttons');
-Route::livewire('/button-events', 'pages::docs.button-events');
-Route::livewire('/confirm', 'pages::docs.confirm');
-Route::livewire('/inputs', 'pages::docs.inputs');
-Route::livewire('/loading', 'pages::docs.loading');
-Route::livewire('/updating', 'pages::docs.updating');
-Route::livewire('/flash', 'pages::docs.flash');
-Route::livewire('/customization', 'pages::docs.customization');
-Route::livewire('/dependency-injection', 'pages::docs.dependency-injection');
-Route::livewire('/ai-skill', 'pages::docs.ai-skill');
+foreach ($docPages as $page) {
+    Route::livewire($page['path'], $page['component']);
+}

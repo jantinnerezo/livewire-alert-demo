@@ -30,22 +30,7 @@ class HttpTest extends TestCase
     #[Test]
     public function docs_pages_render_seo_metadata(): void
     {
-        $paths = [
-            '/',
-            '/installation',
-            '/basic-usage',
-            '/toasts',
-            '/timers',
-            '/buttons',
-            '/button-events',
-            '/confirm',
-            '/inputs',
-            '/loading',
-            '/updating',
-            '/flash',
-            '/customization',
-            '/dependency-injection',
-        ];
+        $paths = collect(config('docs.pages'))->pluck('path');
 
         foreach ($paths as $path) {
             $this->get($path)
